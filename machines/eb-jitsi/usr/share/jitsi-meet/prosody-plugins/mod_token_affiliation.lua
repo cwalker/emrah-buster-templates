@@ -81,7 +81,7 @@ module:hook("muc-occupant-joined", function (event)
         return
     end
 
-    local affiliation = "member"
+    local affiliation = "owner"
     local context_user = event.origin.jitsi_meet_context_user
 
     if context_user then
