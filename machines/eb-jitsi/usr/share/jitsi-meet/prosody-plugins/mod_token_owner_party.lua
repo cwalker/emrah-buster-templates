@@ -98,7 +98,7 @@ module:hook("muc-occupant-left", function (event)
     -- the owner is gone, start to check the room condition
     room:broadcast_message(
         st.message({ type="groupchat", from=occupant.nick })
-        :tag("body"):text("The owner is gone"))
+        :tag("body"):text("Модератор покинул собрание"))
     module:log(LOGLEVEL, "an owner leaved, %s", occupant.jid)
 
     -- check if there is any other owner here
