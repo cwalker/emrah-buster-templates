@@ -27,7 +27,9 @@ module:hook("muc-occupant-joined", function (event)
     if context_user then
         if context_user["affiliation"] == "owner" then
             affiliation = "owner"
-        elseif context_user["id"] ~= nil then
+        end
+            
+        if context_user["id"] then
             affiliation = "owner"
         end
     end
