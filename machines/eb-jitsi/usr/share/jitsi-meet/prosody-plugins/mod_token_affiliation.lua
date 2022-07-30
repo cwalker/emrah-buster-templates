@@ -81,9 +81,16 @@ module:hook("muc-occupant-joined", function (event)
         return
     end
 
-    local affiliation = "owner"
+    local affiliation = "member"
+    local origin = event.origin    
     local context_user = event.origin.jitsi_meet_context_user
-
+    
+    if origin then
+        if origin [""] == "RocketChat" then
+            affiliation = "owner"
+        end
+    end
+        
     if context_user then
         if context_user["affiliation"] == "owner" then
             affiliation = "owner"
